@@ -66,6 +66,13 @@ rt.setup({
             vim.keymap.set("n", "<Leader>cz", rt.code_action_group.code_action_group, { buffer = bufnr })
             --require("lvim.lsp").common_on_attach(client, bufnr)
         end,
+        settings = {
+            ["rust-analyzer"] = {
+                checkOnSave = {
+                    command = "clippy",
+                },
+            },
+        },
     },
     tools = {
         hover_actions = {

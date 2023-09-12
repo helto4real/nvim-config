@@ -56,14 +56,6 @@ local servers = {
     -- clangd = {},
     -- gopls = {},
     -- pyright = {},
-    -- rust_analyzer = {
-    --     cmd = {
-    --         "rustup",
-    --         "run",
-    --         "stable",
-    --         "rust-analyzer",
-    --     },
-    -- },
     -- tsserver = {},
     html = { filetypes = { 'html', 'twig', 'hbs' } },
     lua_ls = {

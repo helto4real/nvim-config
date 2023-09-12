@@ -26,6 +26,7 @@ require('lazy').setup(
             'folke/tokyonight.nvim',
             as = 'tokyonight',
         },
+        {'akinsho/toggleterm.nvim'},
         --  The configuration is done below. Search for lspconfig to find it below.
         {
             -- LSP Configuration & Plugins
@@ -131,6 +132,10 @@ require('lazy').setup(
                 -- or leave it empty to use the default settings
                 -- refer to the configuration section below
             },
+        },
+        {
+            "rest-nvim/rest.nvim",
+            dependencies = {"nvim-lua/plenary.nvim"},
         },
         require 'helto4real.plugins.debug',
 

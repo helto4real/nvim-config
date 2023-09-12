@@ -12,6 +12,9 @@ end
 -- Ok VIM purists will bash me for this...
 vim.cmd('source ~/.config/nvim/lua/helto4real/remap.vim')
 
+--setup keybindings for terminal
+map("n", "<leader>tt", ":ToggleTerm size=50 direction=vertical<CR>", "Toggle [T]erminal")
+
 -- Do not copy single character
 keymap.set("n", "x", '"_x')
 -- window splitting
@@ -30,10 +33,10 @@ map("n", "<leader>wk", "<C-w><C-j>", "Move cursor to [W]indow left");
 
 -- window tabbing
 
-map("n", "<leader>tt", ":tabnew<CR>", "New [T]ab")   -- open new tab
+map("n", "<leader>tn", ":tabnew<CR>", "New [T]ab")     -- open new tab
 map("n", "<leader>tx", ":tabclose<CR>", "Close [T]ab") -- close current tab
-map("n", "<leader>tj", ":tabn<CR>", "Next [T]ab")     -- goto next tab
-map("n", "<leader>tl", ":tabp<CR>", "Previous [T]ab")     -- goto previous tab
+map("n", "<leader>tj", ":tabn<CR>", "Next [T]ab")      -- goto next tab
+map("n", "<leader>tl", ":tabp<CR>", "Previous [T]ab")  -- goto previous tab
 
 -- telescope maps
 -- See `:help telescope.builtin`
@@ -45,7 +48,7 @@ map('n', '<leader>/', function()
         winblend = 10,
         previewer = false,
     })
-end, '[/] Fuzzily search in current buffer' )
+end, '[/] Fuzzily search in current buffer')
 
 map('n', '<leader>fg', require('telescope.builtin').git_files, 'Search [G]it [F]iles')
 map('n', '<leader>ff', require('telescope.builtin').find_files, '[S]earch [F]iles')
@@ -89,3 +92,13 @@ map("n", "<leader>vpp", "<cmd>e");
 -- I know I miss those vscode c+s save thing
 map("n", "<C-s>", "<cmd>w<CR>")
 map("i", "<C-s>", "<Esc><cmd>w<CR>")
+
+map("n", "<C-k><C-k>", "0<C-v><leader>gc")
+
+map('t', '<esc>', [[<C-\><C-n>]])
+map('t', 'jk', [[<C-\><C-n>]])
+map('t', '<C-j>', [[<Cmd>wincmd h<CR>]])
+map('t', '<C-k>', [[<Cmd>wincmd j<CR>]])
+map('t', '<C-i>', [[<Cmd>wincmd k<CR>]])
+map('t', '<C-l>', [[<Cmd>wincmd l<CR>]])
+map('t', '<C-w>', [[<C-\><C-n><C-w>]])
